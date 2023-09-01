@@ -75,7 +75,7 @@ int binary_tree_level(const binary_tree_t *tree)
 {
 	int level = 0;
 
-	while (tree && tree->parent)
+	while (tree)
 	{
 		level++;
 		tree = tree->parent;
