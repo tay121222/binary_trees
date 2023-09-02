@@ -81,5 +81,5 @@ int binary_tree_level(const binary_tree_t *tree)
 		tree = tree->parent;
 	}
 
-	return (level - 1);
+	return (level);
 }
