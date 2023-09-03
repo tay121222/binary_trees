@@ -36,7 +36,7 @@ const binary_tree_t *get_leaf(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_is_leaf - Checks if a node is a leaf
+ * tree_is_leaf - Checks if a node is a leaf
  * @tree: Pointer to the root node of the tree to check
  * Return: If the node is a leaf, 1, otherwise, 0.
  */
