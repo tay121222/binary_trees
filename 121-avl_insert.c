@@ -41,13 +41,13 @@ void update_balance_and_rotate(avl_t **tree, int value)
 	if (bfactor > 1 && (*tree)->left->n < value)
 	{
 		(*tree)->left = binary_tree_rotate_left((*tree)->left);
-		update_balance_and_rotate(&(*tree), value);
+		*tree = binary_tree_rotate_right(*tree);
 		return;
 	}
 	if (bfactor < -1 && (*tree)->right->n > value)
 	{
 		(*tree)->right = binary_tree_rotate_right((*tree)->right);
-		update_balance_and_rotate(&(*tree), value);
+		*tree = binary_tree_rotate_right(*tree);
 	}
 }
 
