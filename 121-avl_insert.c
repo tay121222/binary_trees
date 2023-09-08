@@ -23,27 +23,27 @@ int balance(const binary_tree_t *tree)
  * update_balance_and_rotate - Update balance factor and rotate if needed.
  * @tree: pointer to the root node of the AVL tree.
  */
-void update_balance_and_rotate(avl_t **tree)
+void update_balance_and_rotate(avl_t **tree, int value)
 {
 	int bfactor = balance(*tree);
 
-	if (bfactor > 1 && balance((*tree)->left) >= 0)
+	if (bfactor > 1 && (*tree)->left->n > value)
 	{
 		*tree = binary_tree_rotate_right(*tree);
 		return;
 	}
-	if (bfactor < -1 && balance((*tree)->right) <= 0)
+	if (bfactor < -1 && (*tree)->right->n < value)
 	{
 		*tree = binary_tree_rotate_left(*tree);
 		return;
 	}
-	if (bfactor > 1 && balance((*tree)->left) < 0)
+	if (bfactor > 1 && (*tree)->left-> n < value)
 	{
 		(*tree)->left = binary_tree_rotate_left((*tree)->left);
 		*tree = binary_tree_rotate_right(*tree);
 		return;
 	}
-	if (bfactor < -1 && balance((*tree)->right) > 0)
+	if (bfactor < -1 && (*tree)->right->n > value)
 	{
 		(*tree)->right = binary_tree_rotate_right((*tree)->right);
 		*tree = binary_tree_rotate_left(*tree);
@@ -81,7 +81,7 @@ avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 	else
 		return (*tree);
 
-	update_balance_and_rotate(tree);
+	update_balance_and_rotate(tree, value);
 
 	return (*tree);
 }
