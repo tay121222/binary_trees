@@ -23,7 +23,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_is_bst - Checks if a binary tree is a valid BST tree
+ * binary_tree_is_bst_1 - Checks if a binary tree is a valid BST tree
  * @tree: A pointer to the root node of the tree to check
  * @min: The value of the smallest node visited thus far
  * @max: The value of the largest node visited this far
