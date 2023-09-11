@@ -28,7 +28,7 @@ void update_balance_and_rotate(avl_t **tree, int value)
 	if (bfactor < -1 && (*tree)->right->n > value)
 	{
 		(*tree)->right = binary_tree_rotate_right((*tree)->right);
-		*tree = binary_tree_rotate_right(*tree);
+		*tree = binary_tree_rotate_left(*tree);
 	}
 }
 
